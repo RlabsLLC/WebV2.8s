@@ -583,7 +583,9 @@ section a {
 }
 
 .release-actions .release-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: 8px 16px;
     border-radius: 999px;
     background-color: rgba(20, 20, 20, 0.8);
@@ -597,6 +599,10 @@ section a {
 
 .release-actions .release-button--primary {
     background-color: rgba(40, 40, 40, 0.8);
+}
+
+.release-actions .release-button .news-tag {
+    margin-bottom: 0;
 }
 
 .release-actions--unavailable {
