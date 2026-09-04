@@ -1,4 +1,9 @@
-/* WebV2.8s v0.9.1b made by RingDev */
+/* WebV2.8s v0.9.2b-3 made by RingDev */
+
+/* 
+  WebV is an open-source modern web design built to be fast, lightweight, 
+  and modern, while being easy to edit and use. 
+*/
 
 @font-face {
     font-family: 'Comfortaa';
@@ -196,7 +201,7 @@ section {
     margin-bottom: 40px;
     background-color: rgba(0, 0, 0, 0);
     padding: 30px;
-    border-radius: 25px;
+    border-radius: 35px;
     border: 1px solid rgba(30,30,30,0.7);
 }
 
@@ -229,18 +234,18 @@ section {
     gap: 20px;
 }
 
-#ringapi-section {
+#api-section {
     padding: 30px;
 }
 
-.ringapi-products {
+.api-products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     align-items: stretch;
 }
 
-.ringapi-card {
+.api-card {
     min-height: 100%;
 }
 
@@ -253,13 +258,13 @@ section {
 }
 
 .status-online {
-    color: #8fffd2;
+    color: rgb(0, 190, 190);
     background: rgba(0, 190, 130, 0.15);
     border: 1px solid rgba(0, 255, 180, 0.35);
 }
 
 .status-offline {
-    color: #ff9eae;
+    color: rgb(255, 50, 50);
     background: rgba(220, 40, 80, 0.15);
     border: 1px solid rgba(255, 80, 110, 0.35);
 }
@@ -324,7 +329,7 @@ main > h2:first-of-type {
 
 .news-card {
     border: 1px solid rgba(30, 30, 30, 0.7);
-    border-radius: 18px;
+    border-radius: 20px;
     padding: 20px;
     background: rgba(20, 20, 20, 0.8);
     transition: border-radius 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -334,8 +339,7 @@ main > h2:first-of-type {
 }
 
 .news-card:hover {
-    transform: translateY(-2px);
-    border-radius: 25px;
+    border-radius: 30px;
     box-shadow: inset -2px 0 4px rgba(255, 0, 100, 0.15), inset 2px 0 4px rgba(0, 255, 200, 0.15), inset 0 -2px 4px rgba(255, 0, 100, 0.15), inset 0 2px 4px rgba(0, 255, 200, 0.15);
 }
 
@@ -420,6 +424,85 @@ main > h2:first-of-type {
 .news-card p {
     color: #b0b0b0;
     font-size: 14px;
+}
+
+#uptime {
+    gap: 18px;
+    padding: 24px;
+}
+
+.status-card-header,
+.status-card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.status-card-header .news-tag {
+    margin-bottom: 0;
+}
+
+.status-card-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: rgb(0, 190, 190);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.status-card-body {
+    align-items: flex-end;
+}
+
+.status-card-body h3 {
+    margin-bottom: 4px;
+}
+
+.status-card-caption {
+    color: #8b9995 !important;
+    font-size: 12px !important;
+}
+
+.status-value {
+    color: rgb(0, 190, 190) !important;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem) !important;
+    font-weight: 700;
+    line-height: 1;
+    text-align: right;
+}
+
+.status-value.status-minor {
+    color: rgb(255, 200, 0) !important;
+}
+
+.status-value.status-major {
+    color: rgb(255, 150, 0) !important;
+}
+
+.status-value.status-critical {
+    color: rgb(255, 100, 0) !important;
+}
+
+.status-value.status-unknown {
+    color: rgb(100, 100, 100) !important;
+}
+
+.status-card-link {
+    align-self: flex-start;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: rgb(200, 200, 200) !important;
+    font-size: 12px !important;
+}
+
+.status-card-link:hover {
+    color: white !important;
 }
 
 .news-tag {
@@ -544,7 +627,7 @@ section a {
     align-items: center;
     justify-content: space-between;
     gap: 18px;
-    min-height: 88px;
+    min-height: 50px;
 }
 
 .release-heading {
@@ -618,6 +701,16 @@ section a {
 }
 
 @media (max-width: 600px) {
+    .status-card-body {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .status-value {
+        text-align: left;
+    }
+
     .release-meta {
         align-items: stretch;
         flex-direction: column;
@@ -1261,10 +1354,13 @@ break,
     margin-bottom: 20px;
 }
 .news-image {
+    display: block;
     width: 100%;
-    border-radius: 18px;
+    border-radius: 15px;
     height: auto;
     max-width: 480px;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 700px) {
